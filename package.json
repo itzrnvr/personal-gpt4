@@ -1,0 +1,27 @@
+{
+  "name": "personal-gpt",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "tsc && node ./dist/app.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.3",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.4.9",
+    "@types/uuid": "^9.0.2",
+    "typescript": "^5.1.6"
+  }
+}
