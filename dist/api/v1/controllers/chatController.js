@@ -23,7 +23,7 @@ const getChatResponse = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
     try {
         const { messages } = req.body;
         const modifiedMessages = [...constants_1.breakArray, ...messages];
-        if (messages.length == 1 && !chatHeaders && !chatBody) {
+        if (messages.length == 1 || chatHeaders == null) {
             const { headers, body } = yield (0, generateUser_1.default)();
             chatHeaders = headers;
             chatBody = body;

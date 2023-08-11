@@ -13,7 +13,7 @@ export const getChatResponse = async (req: Request, res: Response, next: NextFun
         const {messages} = req.body;
         const modifiedMessages = [...breakArray, ...messages];
 
-        if(messages.length == 1 && !chatHeaders && !chatBody ) {
+        if(messages.length == 1 || chatHeaders == null ) {
             const {headers, body}: GenUserData = await generateUser();
             chatHeaders = headers
             chatBody = body

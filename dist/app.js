@@ -11,7 +11,7 @@ const morgan_1 = __importDefault(require("morgan"));
 // import usersRouter from './api/v1/routes/generateUser';
 const routes_1 = __importDefault(require("./api/v1/routes"));
 const cors_1 = __importDefault(require("cors"));
-const PORT = process.env.PORT || "8090";
+const PORT = process.env.PORT || "8080";
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, morgan_1.default)('dev'));
