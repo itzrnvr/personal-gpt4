@@ -1,3 +1,4 @@
+import async from 'async';
 import {NextFunction, Request, Response} from "express";
 import generateUser, {GenUserData} from "../services/generateUser";
 import {breakArray, breakPrompt} from "../helpers/constants";
@@ -8,6 +9,9 @@ import chat from "../routes/chat";
 
 let chatHeaders = null
 let chatBody = null
+
+
+
 export const getChatResponse = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {messages} = req.body;
@@ -40,3 +44,5 @@ export const getChatResponse = async (req: Request, res: Response, next: NextFun
         next(err);
     }
 }
+
+
