@@ -6,6 +6,7 @@ import getResponseForPrompt from "../services/getResponseForPrompt";
 import GenerateUser from "../services/generateUser";
 import streamData from "../helpers/streamData";
 import chat from "../routes/chat";
+import streamDataSocket from "../helpers/streamDataSocket";
 
 let chatHeaders = null
 let chatBody = null
@@ -44,5 +45,36 @@ export const getChatResponse = async (req: Request, res: Response, next: NextFun
         next(err);
     }
 }
+
+
+export const getChatResponseSocket = async (messages: string, socket) => {
+    try {
+        messages = JSON.parse(messages)
+        console.log(messages)
+        const modifiedMessages = [...breakArray, ...messages];
+
+        if(messages.length == 1 || chatHeaders == null ) {
+            const {headers, body}: GenUserData = await generateUser();
+            chatHeaders = headers
+            chatBody = body
+        }
+
+        const response = await getResponseForPrompt(modifiedMessages, chatHeaders, chatBody);
+
+        if (!response) {
+            throw new Error('Failed to get response for prompt');
+        }
+
+        const stream = response.data;
+
+        streamDataSocket(stream, socket);
+
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+
+
 
 

@@ -18,10 +18,10 @@ const agent = new https_1.default.Agent({
     keepAlive: true
 });
 const getResponseForPrompt = (messages, headers, body) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("getResponseForPrompt", messages);
-    console.log("getResponseForPrompt", headers);
-    console.log("getResponseForPrompt", body);
-    console.log("getResponseForPrompt", Object.assign({}, body));
+    // console.log("getResponseForPrompt", messages);
+    // console.log("getResponseForPrompt", headers);
+    // console.log("getResponseForPrompt", body)
+    // console.log("getResponseForPrompt", {...body})
     let response = null;
     try {
         console.log(JSON.stringify(Object.assign(Object.assign({}, body), { messages: messages })));

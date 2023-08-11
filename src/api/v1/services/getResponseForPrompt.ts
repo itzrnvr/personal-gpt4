@@ -6,10 +6,10 @@ const agent = new https.Agent({
 });
 
 const getResponseForPrompt = async (messages, headers, body) => {
-    console.log("getResponseForPrompt", messages);
-    console.log("getResponseForPrompt", headers);
-    console.log("getResponseForPrompt", body)
-    console.log("getResponseForPrompt", {...body})
+    // console.log("getResponseForPrompt", messages);
+    // console.log("getResponseForPrompt", headers);
+    // console.log("getResponseForPrompt", body)
+    // console.log("getResponseForPrompt", {...body})
 
     let response = null;
 
