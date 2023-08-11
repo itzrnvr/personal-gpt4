@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import { Server } from 'ws';
 import http from 'http';
 const socketIo = require('socket.io');
 
