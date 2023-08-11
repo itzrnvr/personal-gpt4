@@ -9,7 +9,7 @@ import logger from 'morgan';
 import setUpRoutesV1 from './api/v1/routes';
 import cors from 'cors'
 
-const PORT = process.env.PORT || "8090"
+const PORT = process.env.PORT || "8080"
 
 const app = express();
 
